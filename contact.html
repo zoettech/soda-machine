@@ -12,7 +12,9 @@
     <meta name="author" content="Set Private Limited" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/validation.js"></script>
     <title>Quality Soda Machine</title>
 
 
@@ -177,27 +179,37 @@
                 <div class="row">
                     <div class="col-12 col-sm-12 col-md-7 col-lg-7">
                         <h3 class="title">Contact <span>us</span></h3>
-                        <form id="ajax-contact" method="post" action="http://heatmaponline.com/html/intruder/php/contact.php">
+                        <form id="contactForm" method="POST" action="mail.php">
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <input type="text" name="f_name" id="f_name" class="form-control" placeholder="First Name" required>
+                                    <span id="fname_error_message"></span>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <input type="text" name="l_name" id="l_name" class="form-control" placeholder="Last Name" required>
+                                    <span id="lname_error_message"></span>
                                 </div>
+                               
                                 <div class="form-group col-md-12">
                                     <input type="email" name="email" id="email" class="form-control" placeholder="Your Email" required>
+                                    <span id="email_error_message"></span>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <input type="text" name="subject" class="form-control" placeholder="Subject" id="subject" required>
+                                    <span id="subject_error_message"></span>
+                               
+                               
                                 </div>
                                 <div class="form-group col-md-12">
                                     <div class="contact-textarea">
-                                        <textarea class="form-control" rows="6" placeholder="Wright Message" id="message" name="message" required></textarea>
-                                        <button class="btn btn-theme mt-4" type="submit" value="Submit Form">Send Message</button>
+                                        <textarea class="form-control" rows="6" placeholder="Write Message" id="message" name="message" required></textarea>
+                                        
+                                        <span id="message_error_message"></span>
+                                        
+                                        <div style="text-align: center;"><button class="btn btn-theme mt-4" type="submit" value="Submit Form">Send Message</button></div>
                                     </div>
                                 </div>
-                                <div id="form-messages"></div>
+                               
                             </div>
                         </form>
                     </div>
