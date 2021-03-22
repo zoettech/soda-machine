@@ -116,21 +116,22 @@ $(function() {
    
 
     function check_email() {
-       var pattern = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+      
+       var pattern = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
        var email = $("#email").val();
-       if (pattern.test(email)) {
-          $("#email_error_message").hide();
-          $("#email").css("border-bottom","2px solid #34F458");
-       } else {
-          $("#email_error_message").html("Invalid Email");
-          $("#email_error_message").show();
-          $("#email").css("border-bottom","2px solid #F90A0A");
-          error_email = true;
-       }
+      
+      
        if(email !== '')
        {
-        $("#email_error_message").hide();
-        $("#email").css("border-bottom","2px solid #34F458");
+         if (pattern.test(email)) {
+            $("#email_error_message").hide();
+            $("#email").css("border-bottom","2px solid #34F458");
+         } else {
+            $("#email_error_message").html("Invalid Email");
+            $("#email_error_message").show();
+            $("#email").css("border-bottom","2px solid #F90A0A");
+            error_email = true;
+         }
        }else{
         $("#email_error_message").html("Do not Leave this Filed Empty");
         $("#email_error_message").show();
