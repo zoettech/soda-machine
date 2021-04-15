@@ -1,25 +1,23 @@
 $(function() {
 
-    $("#fname_error_message").hide();
-    $("#lname_error_message").hide();
+    
+    $("#name_error_message").hide();
     $("#subject_error_message").hide();
     $("#email_error_message").hide();
     $("#message_error_message").hide();
   
 
-    var error_fname = false;
-    var error_lname = false;
+    var error_name = false;
+  
     var error_subject = false;
     var error_email = false;
     var error_message = false;
     //var error_retype_password = false;
 
-    $("#f_name").focusout(function(){
-       check_fname();
+    $("#name").focusout(function(){
+       check_name();
     });
-    $("#l_name").focusout(function(){
-      check_lname();
-   });
+    
     $("#subject").focusout(function() {
        check_subject();
     });
@@ -31,61 +29,32 @@ $(function() {
     });
     
 
-    function check_fname() {
+    function check_name() {
        var pattern = /^[a-zA-Z]*$/;
-       var name = $("#f_name").val();
+       var name = $("#name").val();
        if (pattern.test(name)) {
-          $("#fname_error_message").hide();
-          $("#f_name").css("border-bottom","2px solid #34F458");
+          $("#name_error_message").hide();
+          $("#name").css("border-bottom","2px solid #34F458");
        } 
        else {
-          $("#fname_error_message").html("Should contain only Characters");
-          $("#fname_error_message").show();
-          $("#f_name").css("border-bottom","2px solid #F90A0A");
-          error_fname = true;
+          $("#name_error_message").html("Should contain only Characters");
+          $("#name_error_message").show();
+          $("#name").css("border-bottom","2px solid #F90A0A");
+          error_name = true;
        }
        if(name !== '')
        {
-        $("#fname_error_message").hide();
-        $("#f_name").css("border-bottom","2px solid #34F458");
+        $("#name_error_message").hide();
+        $("#name").css("border-bottom","2px solid #34F458");
        }else
        {
-        $("#fname_error_message").html("Do not Leave this Field Empty");
-        $("#fname_error_message").show();
-        $("#f_name").css("border-bottom","2px solid #F90A0A");
-        error_fname = true;
+        $("#name_error_message").html("Do not Leave this Field Empty");
+        $("#name_error_message").show();
+        $("#name").css("border-bottom","2px solid #F90A0A");
+        error_name = true;
 
        }
     }
-    function check_lname() {
-      var pattern = /^[a-zA-Z]*$/;
-      var name = $("#l_name").val();
-      if (pattern.test(name)) {
-         $("#lname_error_message").hide();
-         $("#l_name").css("border-bottom","2px solid #34F458");
-      } 
-      else {
-         $("#lname_error_message").html("Should contain only Characters");
-         $("#lname_error_message").show();
-         $("#l_name").css("border-bottom","2px solid #F90A0A");
-         error_lname = true;
-      }
-      if(name !== '')
-      {
-       $("#lname_error_message").hide();
-       $("#l_name").css("border-bottom","2px solid #34F458");
-      }else
-      {
-       $("#lname_error_message").html("Do not Leave this Field Empty");
-       $("#lname_error_message").show();
-       $("#l_name").css("border-bottom","2px solid #F90A0A");
-       error_lname = true;
-
-      }
-   }
-
-
-
     function check_message() {
        var msg = $("#message").val()
        if (msg !== '') {
